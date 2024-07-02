@@ -1,0 +1,6 @@
+.imagem {
+    width: 150px;
+    border-radius: 50%;
+    position: relative;
+    top: -40px; /* Ajuste o valor para mover a imagem mais para cima conforme necessário */
+}
