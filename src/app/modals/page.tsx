@@ -5,21 +5,18 @@ import { Button, Form, Modal } from 'react-bootstrap';
 
 interface LoginModalProps {
   show: boolean;
-  handleClose: () => void;
-  onLoginSuccess: () => void;
 }
 
-const LoginModal: FC<LoginModalProps> = ({ show, handleClose, onLoginSuccess }) => {
+const LoginModal: FC<LoginModalProps> = ({ show }) => {
   const router = useRouter();
 
   const handleLogin = () => {
-    // Aqui você pode adicionar lógica de autenticação antes de redirecionar
-    onLoginSuccess();
+    
     router.push('/private');
   };
 
   return (
-    <Modal show={show} onHide={handleClose}>
+    <Modal show={show}>
       <Modal.Header closeButton>
         <Modal.Title>Login</Modal.Title>
       </Modal.Header>
