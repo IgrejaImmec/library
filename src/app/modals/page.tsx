@@ -3,16 +3,16 @@ import { useRouter } from 'next/navigation';
 import { Button, Form, Modal } from 'react-bootstrap';
 
 interface PageProps {
-  params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
+  params: {
+    slug: string;
+    searchParams: { [key: string]: string | string[] | undefined };
+    show: boolean;
+    handleClose: () => void;
+  };
 }
 
-interface LoginModalProps {
-  show: boolean;
-  handleClose: () => void;
-}
-
-export default function LoginModal({ show, handleClose }: LoginModalProps) {
+export default function LoginModal({ params }: PageProps) {
+  const { show, handleClose } = params;
   const router = useRouter();
 
   const handleLogin = () => {
@@ -44,4 +44,4 @@ export default function LoginModal({ show, handleClose }: LoginModalProps) {
       </Modal.Body>
     </Modal>
   );
-};
+}

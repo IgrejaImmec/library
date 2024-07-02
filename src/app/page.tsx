@@ -69,7 +69,16 @@ const Home: React.FC = () => {
       </section>
 
       {/* Componente de Modal de Login */}
-      {showLoginModal && <LoginModal show={showLoginModal} handleClose={handleCloseLoginModal} />}
+      {showLoginModal && (
+        <LoginModal
+          params={{
+            slug: '',
+            searchParams: {},
+            show: showLoginModal,
+            handleClose: handleCloseLoginModal,
+          }}
+        />
+      )}
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white text-center py-4">
