@@ -39,8 +39,11 @@ const PrivatePage: React.FC = () => {
 
         {/* Título */}
         <div className="flex-grow flex flex-col items-center justify-center">
+
           <h1 className='text-2xl font-semibold mb-4 text-center'>
+           Área do Usuario 
             <Image src={logo} alt="Immec Library Logo" className='imagem' />
+          
           </h1>
           <div className="flex space-x-4">
             <button className="px-4 py-2 bg-white text-blue-500 rounded-lg shadow hover:bg-blue-200" 

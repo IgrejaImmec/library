@@ -6,9 +6,8 @@ import LoginModal from './modals/page';
 const Home: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [selectedOption, setSelectedOption] = useState<string>('');
-  const [showLoginModal, setShowLoginModal] = useState<boolean>(false); // Estado para controlar a visibilidade do modal de login
-
-  // Função para lidar com a submissão do formulário de pesquisa
+  const [showLoginModal, setShowLoginModal] = useState<boolean>(false); 
+  
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     console.log('Search term:', searchTerm);
@@ -36,7 +35,7 @@ const Home: React.FC = () => {
       </nav>
 
       {/* Título */}
-      <h1 className='titulo'>Seja Bem Vindo(a) Biblioteca de Conteúdos da Immec Church</h1>
+      <h1 className='titulo'>Seja Bem Vindo(a) a  Biblioteca de Conteúdos da Immec Church</h1>
 
       {/* Pesquisa */}
       <section className="flex-1 flex items-center justify-center">
@@ -45,7 +44,7 @@ const Home: React.FC = () => {
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Digite sua pesquisa..."
+            placeholder="Digite o nome do autor ou pregador..."
             className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 mb-2 md:mb-0 md:flex-1"
           />
           <select
