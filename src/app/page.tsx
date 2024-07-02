@@ -1,6 +1,5 @@
 "use client";
 import { FormEvent, useState } from 'react';
-
 import './home.css'; // Importando o arquivo CSS
 import LoginModal from './modals/page';
 
@@ -21,7 +20,10 @@ const Home: React.FC = () => {
     setShowLoginModal(true);
   };
 
-
+  // Função para fechar o modal de login
+  const handleCloseLoginModal = () => {
+    setShowLoginModal(false);
+  };
 
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col">
@@ -37,7 +39,7 @@ const Home: React.FC = () => {
       <h1 className='titulo'>Seja Bem Vindo(a) Biblioteca de Conteúdos da Immec Church</h1>
 
       {/* Pesquisa */}
-      <section className="flex-1 flex items-center  justify-center">
+      <section className="flex-1 flex items-center justify-center">
         <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-lg flex flex-col md:flex-row md:items-center md:space-x-4">
           <input
             type="text"
@@ -67,7 +69,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Componente de Modal de Login */}
-      <LoginModal show={showLoginModal}  />
+      {showLoginModal && <LoginModal show={showLoginModal} handleClose={handleCloseLoginModal} />}
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white text-center py-4">

@@ -1,22 +1,27 @@
 "use client";
 import { useRouter } from 'next/navigation';
-import { FC } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
+
+interface PageProps {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+}
 
 interface LoginModalProps {
   show: boolean;
+  handleClose: () => void;
 }
 
-const LoginModal: FC<LoginModalProps> = ({ show }) => {
+export default function LoginModal({ show, handleClose }: LoginModalProps) {
   const router = useRouter();
 
   const handleLogin = () => {
-    
+    handleClose();
     router.push('/private');
   };
 
   return (
-    <Modal show={show}>
+    <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>Login</Modal.Title>
       </Modal.Header>
@@ -40,5 +45,3 @@ const LoginModal: FC<LoginModalProps> = ({ show }) => {
     </Modal>
   );
 };
-
-export default LoginModal;
