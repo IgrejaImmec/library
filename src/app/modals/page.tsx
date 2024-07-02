@@ -13,7 +13,8 @@ const LoginModal: FC<LoginModalProps> = ({ show, handleClose, onLoginSuccess }) 
   const router = useRouter();
 
   const handleLogin = () => {
-   
+    // Aqui você pode adicionar lógica de autenticação antes de redirecionar
+    onLoginSuccess();
     router.push('/private');
   };
 
