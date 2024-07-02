@@ -1,3 +1,4 @@
+"use client";
 import { useRouter } from 'next/navigation';
 import { FC } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
